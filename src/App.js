@@ -1,12 +1,35 @@
 import React from "react";
 import Pad from "./Pad";
+import Display from "./display";
 import "./App.css";
 function App() {
-  const buttonData = [
+  const operationButtonData = [
     {
       id: "equals",
       innerText: "=",
     },
+    {
+      id: "add",
+      innerText: "+",
+    },
+    {
+      id: "subtract",
+      innerText: "-",
+    },
+    {
+      id: "multiply",
+      innerText: "*",
+    },
+    {
+      id: "divide",
+      innerText: "/",
+    },
+    {
+      id: "decimal",
+      innerText: ".",
+    },
+  ];
+  const numButtonData = [
     {
       id: "zero",
       innerText: "0",
@@ -48,33 +71,13 @@ function App() {
       innerText: "9",
     },
     {
-      id: "add",
-      innerText: "+",
-    },
-    {
-      id: "subtract",
-      innerText: "-",
-    },
-    {
-      id: "multiply",
-      innerText: "x",
-    },
-    {
-      id: "divide",
-      innerText: "/",
-    },
-    {
-      id: "decimal",
-      innerText: ".",
-    },
-    {
       id: "clear",
       innerText: "AC",
     },
   ];
   return (
     <div className="App">
-      <Pad buttonData={buttonData} />
+      <Pad numButtons={numButtonData} operationButtons={operationButtonData} />
     </div>
   );
 }
