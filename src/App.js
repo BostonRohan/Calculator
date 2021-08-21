@@ -1,83 +1,59 @@
-import React from "react";
-import Pad from "./Pad";
-import Display from "./display";
+import { React, useState, useRef } from "react";
+import {
+  otherButtonData,
+  numButtonData,
+  operationButtonData,
+} from "./buttondata";
 import "./App.css";
+
 function App() {
-  const operationButtonData = [
-    {
-      id: "equals",
-      innerText: "=",
-    },
-    {
-      id: "add",
-      innerText: "+",
-    },
-    {
-      id: "subtract",
-      innerText: "-",
-    },
-    {
-      id: "multiply",
-      innerText: "*",
-    },
-    {
-      id: "divide",
-      innerText: "/",
-    },
-    {
-      id: "decimal",
-      innerText: ".",
-    },
-  ];
-  const numButtonData = [
-    {
-      id: "zero",
-      innerText: "0",
-    },
-    {
-      id: "one",
-      innerText: "1",
-    },
-    {
-      id: "two",
-      innerText: "2",
-    },
-    {
-      id: "three",
-      innerText: "3",
-    },
-    {
-      id: "four",
-      innerText: "4",
-    },
-    {
-      id: "five",
-      innerText: "5",
-    },
-    {
-      id: "six",
-      innerText: "6",
-    },
-    {
-      id: "seven",
-      innerText: "7",
-    },
-    {
-      id: "eight",
-      innerText: "8",
-    },
-    {
-      id: "nine",
-      innerText: "9",
-    },
-    {
-      id: "clear",
-      innerText: "AC",
-    },
-  ];
+  const [expression, setExpression] = useState("0");
+  const [operation, setOperation] = useState(undefined);
+  const previous = useRef(expression);
+  const handleClick = (e) => {
+    const { innerText } = e.target;
+    console.log(innerText);
+
+    if (!Number.isNaN(Number(innerText))) {
+      if (expression === "0") {
+        setExpression(innerText);
+      } else {
+        setExpression(expression + innerText);
+      }
+      return;
+    }
+    switch (innerText) {
+      case "AC":
+        setExpression("0");
+        previous.current = undefined;
+        break;
+      case ".":
+        if (!expression.includes(".")) {
+          setExpression(expression + innerText);
+        }
+        break;
+    }
+  };
   return (
     <div className="App">
-      <Pad numButtons={numButtonData} operationButtons={operationButtonData} />
+      <div id="display">{expression}</div>
+      <div className="buttons">
+        {otherButtonData.map((button) => (
+          <button id={button.id} key={button.id} onClick={handleClick}>
+            {button.innerText}
+          </button>
+        ))}
+        {numButtonData.map((button) => (
+          <button id={button.id} key={button.id} onClick={handleClick}>
+            {button.innerText}
+          </button>
+        ))}
+        {operationButtonData.map((button) => (
+          <button id={button.id} key={button.id} onClick={handleClick}>
+            {button.innerText}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
