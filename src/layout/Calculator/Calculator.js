@@ -9,10 +9,17 @@ function Calculator() {
     operation: "",
   });
   const handleClick = (e) => {
+    console.log(currentState.expression);
     const pressed = e.target.innerHTML;
     const ops = ["+", "-", "*", "/", "%", "0", "."];
     if (ops.includes(pressed) && currentState.expression === "") {
       return;
+    } else if (
+      currentState.expression &&
+      currentState.expression.indexOf(".") === 1 &&
+      pressed === "."
+    ) {
+      pressed.replace(/[.]/, "");
     } else {
       if (pressed === "AC") {
         setCurrentState({
@@ -31,6 +38,32 @@ function Calculator() {
           display: "",
         });
       else if (pressed === "=" && currentState.expression) {
+        var repeat = false;
+        console.log(repeat);
+        for (var i = 0; i < currentState.expression.length; i++) {
+          if (
+            currentState.expression[i] === "+" ||
+            currentState.expression[i] === "-" ||
+            currentState.expression[i] === "*" ||
+            (currentState.expression[i + 1] === "/" &&
+              currentState.expression[i + 1] === "+") ||
+            currentState.expression[i + 1] === "-" ||
+            currentState.expression[i + 1] === "/" ||
+            currentState.expression[i + 1] === "*"
+          ) {
+            repeat = true;
+          }
+        }
+        if (repeat) {
+          setCurrentState({
+            expression:
+              currentState.expression[0] +
+              "" +
+              currentState.expression[currentState.expression.length - 3] +
+              "" +
+              currentState.expression[currentState.expression.length - 1],
+          });
+        }
         const evalResult = eval(currentState.expression);
         const result = Number.isInteger(evalResult)
           ? evalResult
