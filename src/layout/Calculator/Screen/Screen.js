@@ -1,3 +1,3 @@
 import React from "react";
-const resultScreen = () => <div id="display">3124</div>;
+const resultScreen = (props) => <div id="display">{props.display || 0}</div>;
 export default resultScreen;

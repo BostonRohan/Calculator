@@ -21,7 +21,7 @@
   left: 30px;
   position: relative;
 }
-/* The switch - the box areound the slider */
+/* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
@@ -48,7 +48,7 @@
 }
 .slider:before {
   position: absolute;
-  content: "";
+  content: var(--toggle-image);
   height: 26px;
   width: 26px;
   left: 4px;
@@ -85,11 +85,11 @@ input:checked + .slider:before {
   height: 75vh;
   width: 25%;
   box-shadow: 0 2rem 4rem var(--shadow);
-  background-color: var(--color-light-black);
+  background-color: var(--background-color);
   border-radius: 25px;
 }
 #display {
-  color: var(--color-light-white);
+  color: var(--text-color);
   text-align: right;
   padding-top: 25%;
   padding-right: 10%;
@@ -107,8 +107,8 @@ input:checked + .slider:before {
   color: white;
 }
 .btn {
-  background-color: var(--color-light-black);
-  color: var(--color-light-white);
+  background-color: var(--text-color);
+  color: var(--text-color);
   font-size: 3rem;
   border: 1px solid transparent;
   display: flex;
@@ -168,11 +168,19 @@ input:checked + .slider:before {
 /* Variables*/
 :root {
   --shadow: rgba(0, 0, 0, 0.4);
-  --color-light-black: #222;
-  --color-light-white: #fff;
+  --background-color: #222;
+  --text-color: #fff;
   --apple-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --number-button-color: #3e4041;
   --operation-button-color: #ff8900;
   --function-button-color: #9d9f9c;
+  --toggle-image: url("./icons8-sun.svg");
+}
+.theme-light {
+  --text-color: #222;
+  --background-color: #fff;
+  --number-button-color: #f8f8f8;
+  --function-button-color: #dddddd;
+  --toggle-image: "";
 }

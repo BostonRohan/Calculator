@@ -2,36 +2,74 @@ import React from "react";
 import KeypadRow from "./KeypadRow/KeypadRow";
 import Button from "../../../components/Button/Button";
 
-const keypad = () => (
+const keypad = (props) => (
   <section className="keypad">
     <KeypadRow>
-      <Button id="clear">AC</Button>
-      <Button id="plus-minus">+/-</Button>
-      <Button id="percent">%</Button>
-      <Button id="divide">/</Button>
+      <Button handleClick={props.handleClick} id="clear">
+        AC
+      </Button>
+      <Button handleClick={props.handleClick} id="plus-minus">
+        +/-
+      </Button>
+      <Button handleClick={props.handleClick} id="percent">
+        %
+      </Button>
+      <Button handleClick={props.handleClick} id="divide">
+        /
+      </Button>
     </KeypadRow>
     <KeypadRow>
-      <Button id="seven">7</Button>
-      <Button id="eight">8</Button>
-      <Button id="nine">9</Button>
-      <Button id="multiply">x</Button>
+      <Button handleClick={props.handleClick} id="seven">
+        7
+      </Button>
+      <Button handleClick={props.handleClick} id="eight">
+        8
+      </Button>
+      <Button handleClick={props.handleClick} id="nine">
+        9
+      </Button>
+      <Button handleClick={props.handleClick} id="multiply">
+        *
+      </Button>
     </KeypadRow>
     <KeypadRow>
-      <Button id="four">4</Button>
-      <Button id="five">5</Button>
-      <Button id="six">6</Button>
-      <Button id="subtract">-</Button>
+      <Button handleClick={props.handleClick} id="four">
+        4
+      </Button>
+      <Button handleClick={props.handleClick} id="five">
+        5
+      </Button>
+      <Button handleClick={props.handleClick} id="six">
+        6
+      </Button>
+      <Button handleClick={props.handleClick} id="subtract">
+        -
+      </Button>
     </KeypadRow>
     <KeypadRow>
-      <Button id="one">1</Button>
-      <Button id="two">2</Button>
-      <Button id="three">3</Button>
-      <Button id="add">+</Button>
+      <Button handleClick={props.handleClick} id="one">
+        1
+      </Button>
+      <Button handleClick={props.handleClick} id="two">
+        2
+      </Button>
+      <Button handleClick={props.handleClick} id="three">
+        3
+      </Button>
+      <Button handleClick={props.handleClick} id="add">
+        +
+      </Button>
     </KeypadRow>
     <KeypadRow>
-      <Button id="zero">0</Button>
-      <Button id="decimal">.</Button>
-      <Button id="equals">=</Button>
+      <Button handleClick={props.handleClick} id="zero">
+        0
+      </Button>
+      <Button handleClick={props.handleClick} id="decimal">
+        .
+      </Button>
+      <Button handleClick={props.handleClick} id="equals">
+        =
+      </Button>
     </KeypadRow>
   </section>
 );
