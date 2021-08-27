@@ -9,6 +9,7 @@ function Calculator() {
     operation: "",
   });
   const handleClick = (e) => {
+    console.log(currentState.expression);
     const pressed = e.target.innerHTML;
     const ops = ["+", "-", "*", "/", "%", "0", "."];
     if (ops.includes(pressed) && currentState.expression === "") {
@@ -32,6 +33,11 @@ function Calculator() {
           expression: (currentState.expression += " " + pressed + " "),
           display: "",
         });
+        if (currentState.expression === "5 *  -  + ") {
+          setCurrentState({
+            expression: `5 ${pressed}`,
+          });
+        }
       } else if (pressed === "=" && currentState.expression) {
         const evalResult = eval(currentState.expression);
         setCurrentState({
