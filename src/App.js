@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <Calculator />
+      <footer className="credit">Created by Boston Rohan</footer>
     </div>
   );
 }

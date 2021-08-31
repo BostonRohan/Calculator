@@ -9,7 +9,7 @@ const keypad = (props) => (
         AC
       </Button>
       <Button handleClick={props.handleClick} id="plus-minus">
-        +/-
+        ±
       </Button>
       <Button handleClick={props.handleClick} id="percent">
         %
