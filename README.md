@@ -1,8 +1,16 @@
-# Getting Started with Create React App
+# Project Description
+
+This project was created in conjunction with FreeCodeCamp cirriculum using React. The project includes a calculator with light-dark functionalities. To view the project click below:
+<a href = "https://bostonrohan.github.io/Calculator/" target = "_blank"><img src = "public\Screenshots\dark screenshot.PNG" />
+<img src = "public\Screenshots\light screenshot.PNG" />
+
+## To run the project locally
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
