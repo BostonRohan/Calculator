@@ -188,22 +188,40 @@ input:checked + .slider:before {
     height: 25px;
     font-size: 10px;
   }
+  #zero {
+    width: 92px;
+  }
+  #display {
+    font-size: 17px;
+  }
 }
 @media screen and (max-width: 793px) and (min-width: 500px) {
   .calculator {
     height: auto;
-    width: 50%;
+    max-width: 50%;
   }
   .btn {
     width: 40px;
     height: 40px;
     font-size: 15px;
   }
+  #display {
+    font-size: 25px;
+  }
+  #zero {
+    width: 137px;
+  }
 }
-@media screen and (max-width: 1200px) and (min-width: 793px) {
+@media screen and (max-width: 1300px) and (min-width: 793px) {
   .calculator {
     height: auto;
     width: 55%;
+  }
+  #display {
+    font-size: 35px;
+  }
+  #zero {
+    width: 197px;
   }
 }
 

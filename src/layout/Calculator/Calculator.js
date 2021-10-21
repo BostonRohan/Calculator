@@ -33,7 +33,7 @@ function Calculator() {
       pressed.replace(/[.]/, "");
     }
     //Changing display for max length error
-    else if (currentState.expression.length > 11) {
+    else if (currentState.expression.length > 23) {
       return errorTimeout("max length");
     }
 
