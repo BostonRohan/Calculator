@@ -1,7 +1,7 @@
 # Project Description
 
 This project was created in conjunction with FreeCodeCamp curriculum using React. The project includes a calculator with light-dark functionalities. To view the project click below:
-<a href = "https://bostonrohan.github.io/Calculator/" target = "_blank"><img src = "public\Screenshots\dark screenshot.PNG" />
+<a href = "https://bostonrohan.github.io/calculator/" target = "_blank"><img src = "public\Screenshots\dark screenshot.PNG" />
 <img src = "public\Screenshots\light screenshot.PNG" />
 
 ## To run the project locally
